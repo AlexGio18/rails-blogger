@@ -1,4 +1,6 @@
 class TagsController < ApplicationController
+  http_basic_authenticate_with name: "aristophanes", password: "badandboujee", only: :destroy
+  
   def index
     @tags = Tag.all
   end
