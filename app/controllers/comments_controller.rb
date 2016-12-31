@@ -6,7 +6,9 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to article_path(@comment.article)
     else
-      render 
+      @article = @comment.article
+      render 'articles/show'
+    end
   end
 
   def destroy
