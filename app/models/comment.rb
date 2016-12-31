@@ -4,7 +4,7 @@ class Comment < ApplicationRecord
   belongs_to :article
 
   def default_author
-    if self.author.nil?
+    if self.author.nil? || self.author = ""
       self.author = "Anonymous"
     end
   end
